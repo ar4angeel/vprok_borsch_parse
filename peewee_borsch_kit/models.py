@@ -10,7 +10,7 @@ class Product(Model):
         database = db
 
 class Price(Model):
-    product_id = Product.ID
+    product = ForeignKeyField(Product,backref='prices')
     price = FloatField()
     timestamp = DateTimeField()
 
@@ -18,3 +18,10 @@ class Price(Model):
         database = db
 
 
+def create_table():
+    with db:
+        Product.create_table()
+        Price.create_table()
+
+if __name__ == '__main__':
+    create_table()
