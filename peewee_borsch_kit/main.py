@@ -1,23 +1,20 @@
 from peewee import *
-main_kit = SqliteDatabase('vprok_borsh_main_kit.db')
-second_kit = SqliteDatabase('vprok_borsch_second_kit.db')
+db = SqliteDatabase('vprok_borsh_kit.db')
 
 class Product(Model):
-    ID = AutoField()
-    NAME = TextField()
-    URL = BareField()
-    AMOUNT = AutoField()
+    name = CharField()
+    url = CharField()
+    amount = FloatField()
 
     class Meta:
-        database = main_kit
+        database = db
 
 class Price(Model):
-    ID = AutoField()
-    PRODUCT_ID = Product.ID
-    PRICE = FloatField()
-    TIMESTAMP = BareField
+    product_id = Product.ID
+    price = FloatField()
+    timestamp = DateTimeField()
 
     class Meta:
-        database = second_kit
+        database = db
 
 
