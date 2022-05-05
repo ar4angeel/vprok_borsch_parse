@@ -3,15 +3,16 @@ db = SqliteDatabase('vprok_borsh_kit.db')
 
 class Product(Model):
     name = CharField()
-    url = CharField()
-    amount = FloatField()
+    url = CharField(unique=True)
+    amount = CharField()
+
 
     class Meta:
         database = db
 
 class Price(Model):
     product = ForeignKeyField(Product,backref='prices')
-    price = FloatField()
+    price = CharField()
     timestamp = DateTimeField()
 
     class Meta:
@@ -23,5 +24,4 @@ def create_table():
         Product.create_table()
         Price.create_table()
 
-if __name__ == '__main__':
-    create_table()
+create_table()
