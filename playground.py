@@ -1,15 +1,12 @@
+from models import *
+from peewee import *
 from models import (Product, Price)
-plum = Product(amount='1кг',name='plum',url='vprok/fructs/plum')
-onion = Product(amount='4th',name='onion',url='vprok/vegetables/onion')
-cherry = Product(amount='3кг',name='cherry',url='vprok/fructs/cherry')
+from links import list_products
 
-plum_price = Price(product=plum,price='78.32',timestamp='28.04.2022')
-onion_price = Price(product=onion,price='24.12',timestamp='28.04.2022')
-cherry_price = Price(product=cherry,price='213.72',timestamp='28.04.2022')
+def get_id_name(id):
+    a = Product.get_by_id(id)
+    return a
 
-plum.save()
-onion.save()
-cherry.save()
-plum_price.save()
-onion_price.save()
-cherry_price.save()
+
+
+
