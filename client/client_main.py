@@ -16,7 +16,7 @@ def before_request():
 
 @app.route('/id/<id>')
 def get_product_from_id(id):
-    a = Product.get_by_id(id).name
+    a = Product.get_by_id(int(id)).name
     return a
 
 @app.after_request
