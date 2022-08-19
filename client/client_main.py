@@ -3,6 +3,9 @@ from models import (Product, Price, db)
 from links import *
 app = Flask(__name__)
 
+def take_list_of_products():
+
+
 @app.route('/')
 def index():
     return render_template('about.html')
@@ -20,7 +23,7 @@ def get_product_from_id(id):
     a = Product.get_by_id(int(id)).name
     c = Product.get_by_id(int(id)).url
     b = Price.get_by_id(int(id)).price
-    return render_template('forms.html', name=f'{a}',price=f'{b}',ref=f'{c}')
+    return render_template('forms.html', name=f'{a}',price=f'{b}',ref=f'{c}', caption=f'{a}')
 
 @app.after_request
 def after_request(response):

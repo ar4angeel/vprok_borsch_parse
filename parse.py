@@ -2,8 +2,6 @@ from datetime import datetime
 
 import requests
 from bs4 import BeautifulSoup
-from peewee import *
-from telegram.ext import defaults
 
 from links import *
 from models import Price, Product

@@ -9,18 +9,15 @@ click_counter = 0
 def counter_click():
     global click_counter
     click_counter += 1
-    counter_button()['text'] = f'click number: {click_counter}'
+    buttonie['text'] = f'click number: {click_counter}'
+    print(click_counter)
 
 
-def main_win():
-    win.title('Example! Test!')
-    win.iconphoto(False, photo)
-    win.geometry('700x300+45+700')
-    win.resizable(False, False)
-    win.config(background=pink)
-
-
-main_win()
+win.title('Example! Test!')
+win.iconphoto(False, photo)
+win.geometry('700x300+45+700')
+win.resizable(False, False)
+win.config(background=pink)
 
 
 def main_label_on():
@@ -50,10 +47,8 @@ def main_lambda_button_add_label_technology(text):
 main_lambda_button_add_label_technology('test! test!').place(x=239, y=150)
 
 
-def counter_button():
-    buttonie = Button(win, text=f'count number: {click_counter}', command=counter_click)
-    return buttonie
+buttonie = Button(win, text=f'count number: {click_counter}', command=counter_click)
 
 
-counter_button().place(x=239, y=250)
+buttonie.place(x=239, y=250)
 win.mainloop()
