@@ -1,9 +1,8 @@
-from flask import Flask, url_for, render_template
-from models import (Product, Price, db)
-from links import *
-app = Flask(__name__)
+from flask import Flask, render_template
+from models import (Product, db)
+from parse_from_table import get_data_list
 
-def take_list_of_products():
+app = Flask(__name__)
 
 
 @app.route('/')
@@ -22,8 +21,8 @@ def before_request():
 def get_product_from_id(id):
     a = Product.get_by_id(int(id)).name
     c = Product.get_by_id(int(id)).url
-    b = Price.get_by_id(int(id)).price
-    return render_template('forms.html', name=f'{a}',price=f'{b}',ref=f'{c}', caption=f'{a}')
+    d = get_data_list(id)
+    return render_template('forms.html', name=f'{a}', caption=f'{a}', data_list=d, url=c)
 
 @app.after_request
 def after_request(response):
