@@ -1,5 +1,3 @@
-myaso_govyad = "https://online.globus.ru/products/govyazhya-sheya-bez-kosti-1-upakovka-0-7-0-9-kg/"
-svinya = "https://online.globus.ru/products/svinaya-vyrezka-1-upakovka-700-1100-g/"
 luk_repchatyy = "https://online.globus.ru/products/luk-repchatyy-1-kg/"
 svekla = "https://online.globus.ru/products/svekla-1-kg/"
 kartofel = "https://online.globus.ru/products/kartofel-fasovannyy-belyy-1-upakovka-5-09-5-22-kg/"
@@ -15,4 +13,4 @@ sol = "https://online.globus.ru/products/chernaya-sol-gimalayskaya-ufeelgood-mol
 perets_chernyy = "https://online.globus.ru/products/perets-chernyy-globus-goroshkom-40-g/"
 smetana_15 = "https://online.globus.ru/products/smetana-prostokvashino-15-300-g/"
 
-list_products = [myaso_govyad,svinya,luk_repchatyy,svekla,kartofel,morkov,kapusta,chesnok_svejiy,petrushka_zelenaya,pasta_tomatnaya,uksus_yablochnyy,lavrovyy_list,sahar,sol,perets_chernyy,smetana_15]
+list_products = [luk_repchatyy,svekla,kartofel,morkov,kapusta,chesnok_svejiy,petrushka_zelenaya,pasta_tomatnaya,uksus_yablochnyy,lavrovyy_list,sahar,sol,perets_chernyy,smetana_15]
